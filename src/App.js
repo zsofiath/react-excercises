@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Userlist from "./components/Userlist";
+import UserForm from "./components/UserForm";
+import EmptyError from "./components/EmptyError";
 
 function App() {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [isError, setisError] = useState(false);
+  const [users, setUsers] = useState([]);
+
+  function addUser() {
+    if (age === '' || name === '') {
+      setisError(true);
+    } else {
+      setUsers((users) => {
+        users.push({ age, name });
+        setName('');
+        setAge('');
+        return users;
+      });
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <EmptyError setisError={setisError} isError={isError}/>
+      <div>
+        <UserForm
+        name={name}
+        age={age}
+        setName={setName}
+        setAge={setAge}
+        addUser={addUser}
+        />
+      </div>
+      <Userlist users={users}/>
     </div>
   );
 }
