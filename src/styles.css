@@ -5,9 +5,13 @@
   --color-secondary: #ff7800;
   --color-yellow: #ffe300;
 }
-
+ul {
+  padding-inline-start: 0;
+  list-style-type: none; 
+}
 body {
   background-color: var(--color-white);
+  font-family:Arial, Helvetica, sans-serif ;
 }
 .mt-5 {
   margin-top: 5px;
@@ -21,25 +25,21 @@ body {
 input {
   border-radius: 3px;
   padding: 10px;
-  margin: 3px;
   border-radius: 3px;
   border: 1px solid #ccc;
 }
 
-.btn {
-  border: none;
-  background-color: var(--color-secondary);
-  color: white;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 3px;
-  padding: 12px;
-}
-
-.btn.btn-w {
+label {
   display: block;
-  width: 100%;
+  position: relative;
+  top: -4px;
+  color: white;
+  font-weight: bold;
+ 
+  text-transform: uppercase;
+  font-size: .6rem;
+  letter-spacing: .4em;
 }
-
 .list-item {
   background-color: var(--color-gray);
 }
@@ -52,15 +52,37 @@ input {
   width: 100%;
 }
 
+.btn-w {
+  display: block;
+  width: 100%;
+}
+
 .list-item > div > div:last-child {
   background-color: var(--color-white);
   border-radius: 3px;
-  padding: 15px;
+  padding: 15px 10px 8px;
   border: 1px solid #ccc;
   font-size: 20px;
   color: var(--color-secondary);
+  text-align: center;
+}
+
+.list-item > div > div:last-child span{
+  display: block;
+  color: #1c1c1c;
+  font-size: 10px;
 }
 
 .form {
   background-color: var(--color-primary);
+}
+
+.form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form form > div {
+  margin-right: 10px;
 }

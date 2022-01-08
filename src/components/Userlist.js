@@ -3,14 +3,16 @@ import Card from '../UIElements/Card';
 
 export default function Userlist({ users }) {
   return (
-    <div>
+    <ul>
       {users.map((user, index) => (
-        <Card key={index} className="list-item">
+        <li key={index}>
+        <Card  className="list-item">
           <div >
-            <div>{user.name}</div><div>{user.age}</div>
+            <div>{user.name}</div><div>{user.age}<span>Years old</span></div>
           </div>
         </Card>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
