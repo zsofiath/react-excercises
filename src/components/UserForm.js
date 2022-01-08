@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../UIElements/Button";
 import Card from "../UIElements/Card";
 
 export default function UserForm({ name, setName, age, setAge, addUser }) {
@@ -34,9 +35,7 @@ export default function UserForm({ name, setName, age, setAge, addUser }) {
           />
         </div>
 
-        <button className="btn" onClick={addUserHandller}>
-          Add user
-        </button>
+        <Button text="Add user" btnW onClick={addUserHandller}></Button>
       </form>
     </Card>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../UIElements/Card';
 import Dialog from '../UIElements/Dialog';
-
+import Button from '../UIElements/Button';
 
 export default function EmptyError({isError, setisError}) {
     if(isError) return (
@@ -9,14 +9,9 @@ export default function EmptyError({isError, setisError}) {
         <Card className="list-item">
         <>
           You must fill every field!
-          <button
-          className='btn mt-5 btn-w'
-            onClick={() => {
+          <Button text="Close" className="mt-5 btn-w" onClick={() => {
               setisError(false);
-            }}
-          >
-            Close
-          </button>
+            }} on/>
         </>
         </Card>
         </Dialog>
