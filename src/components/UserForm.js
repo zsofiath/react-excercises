@@ -23,9 +23,13 @@ export default function UserForm({ onAddUser }) {
     }
   };
 
+  const errorHandler = () => {
+    setisError(false);
+  }
+
   return (
     <Card className="form">
-      <ErrorModal setisError={setisError} isError={isError} text={errorMessage}/>
+      {isError && <ErrorModal isError={isError} message={errorMessage} onConfirm={errorHandler}/>}
       <form>
         <div>
           <label htmlFor="user-name">Name</label>
