@@ -7,17 +7,17 @@ export default function EmptyError({isError, setisError}) {
     if(isError) return (
         <Dialog>
         <Card className="list-item">
-        <div>
+        <>
           You must fill every field!
           <button
-          className='btn'
+          className='btn mt-5 btn-w'
             onClick={() => {
               setisError(false);
             }}
           >
             Close
           </button>
-        </div>
+        </>
         </Card>
         </Dialog>
       );

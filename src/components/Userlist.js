@@ -5,9 +5,9 @@ export default function Userlist({ users }) {
   return (
     <div>
       {users.map((user, index) => (
-        <Card key={index} className=".list-item">
+        <Card key={index} className="list-item">
           <div >
-            <span>{user.name}</span>, <span>{user.age}</span>
+            <div>{user.name}</div><div>{user.age}</div>
           </div>
         </Card>
       ))}

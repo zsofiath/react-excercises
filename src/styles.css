@@ -1,14 +1,25 @@
+:root {
+  --color-white: #f7f7f7;
+  --color-gray: #ececec;
+  --color-primary: #ffbc97;
+  --color-secondary: #ff7800;
+  --color-yellow: #ffe300;
+}
+
 body {
-  background-color: aliceblue;
+  background-color: var(--color-white);
+}
+.mt-5 {
+  margin-top: 5px;
 }
 .container {
-    width: 40vw;
-    min-width: 400px;
-    margin: 10px auto;
+  width: 40vw;
+  min-width: 400px;
+  margin: 10px auto;
 }
 
 input {
-border-radius: 3px;
+  border-radius: 3px;
   padding: 10px;
   margin: 3px;
   border-radius: 3px;
@@ -17,18 +28,39 @@ border-radius: 3px;
 
 .btn {
   border: none;
-  background-color: seagreen;
+  background-color: var(--color-secondary);
   color: white;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 3px;
   padding: 12px;
 }
 
+.btn.btn-w {
+  display: block;
+  width: 100%;
+}
+
 .list-item {
-  background-color: rgb(249, 252, 255)
+  background-color: var(--color-gray);
+}
+
+.list-item > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  width: 100%;
+}
+
+.list-item > div > div:last-child {
+  background-color: var(--color-white);
+  border-radius: 3px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  color: var(--color-secondary);
 }
 
 .form {
-  background-color: white;
+  background-color: var(--color-primary);
 }
-
