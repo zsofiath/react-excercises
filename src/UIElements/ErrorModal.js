@@ -1,14 +1,14 @@
 import React from 'react';
-import Card from '../UIElements/Card';
-import Dialog from '../UIElements/Dialog';
-import Button from '../UIElements/Button';
+import Card from './Card';
+import Dialog from './Dialog';
+import Button from './Button';
 
-export default function EmptyError({isError, setisError}) {
+export default function ErrorModal({isError, setisError, text}) {
     if(isError) return (
         <Dialog>
         <Card className="list-item">
         <>
-          You must fill every field!
+          {text}
           <Button  className="mt-5 btn-w" onClick={() => {
               setisError(false);
             }} >Close</Button>
