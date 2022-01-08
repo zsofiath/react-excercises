@@ -1,35 +1,43 @@
-import React from 'react';
-import Card from '../UIElements/Card';
+import React from "react";
+import Card from "../UIElements/Card";
 
+export default function UserForm({ name, setName, age, setAge, addUser }) {
+  
+  const addUserHandller = (event) => {
+    event.preventDefault();
+    addUser();
+  };
 
-export default function UserForm({name, setName, age, setAge, addUser}) {
-    return (
-        <Card className='form'>
-        <form>
+  return (
+    <Card className="form">
+      <form>
+        <div>
+          <label htmlFor="user-name">Name</label>
           <input
+            id="user-name"
             value={name}
-            placeholder='Name'
+            placeholder="Name"
             onChange={(event) => {
               setName(event.target.value);
             }}
           />
+        </div>
+        <div>
+          <label htmlFor="user-age">Age</label>
           <input
+            id="user-age"
             value={age}
-            placeholder='Age'
+            placeholder="Age"
             onChange={(event) => {
               setAge(event.target.value);
             }}
           />
-          <button
-          className='btn'
-            onClick={(event) => {
-              event.preventDefault();
-              addUser();
-            }}
-          >
-            Add user
-          </button>
-        </form>
-        </Card>
-    )
+        </div>
+
+        <button className="btn" onClick={addUserHandller}>
+          Add user
+        </button>
+      </form>
+    </Card>
+  );
 }
