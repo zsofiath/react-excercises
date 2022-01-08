@@ -19,6 +19,8 @@ export default function UserForm({ onAddUser }) {
       setisError(true);
       seterrorMessage('Age must be a number bigger than 0.')
     } else {
+      setAge('');
+      setName('');
       onAddUser({age, name});
     }
   };
