@@ -4,13 +4,11 @@ import Userlist from "./components/Userlist";
 import UserForm from "./components/UserForm";
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [usersList, setUsersList] = useState([]);
 
-  function addUser(user) {
-    console.log(user);
-      setUsers((users) => {
-        users.push(user);
-        return users;
+  function addUserHandler(user) {
+      setUsersList((users) => {
+        return [...users, user]; // The arrays refernce must change to make the whole list re-render!!!
       });
   }
 
@@ -18,10 +16,10 @@ function App() {
     <div className="container">
       <div>
         <UserForm
-        addUser={addUser}
+        onAddUser={addUserHandler}
         />
       </div>
-      <Userlist users={users}/>
+      <Userlist users={usersList}/>
     </div>
   );
 }

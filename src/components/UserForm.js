@@ -3,7 +3,7 @@ import Button from "../UIElements/Button";
 import Card from "../UIElements/Card";
 import EmptyError from './EmptyError';
 
-export default function UserForm({ addUser }) {
+export default function UserForm({ onAddUser }) {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [isError, setisError] = useState(false);
@@ -16,7 +16,7 @@ export default function UserForm({ addUser }) {
     } else if (isNaN(age) || +age < 1) {
       setisError(true);
     } else {
-      addUser({age, name});
+      onAddUser({age, name});
     }
   };
 
