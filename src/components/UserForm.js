@@ -1,16 +1,28 @@
-import React from "react";
+import React, {useState}  from "react";
 import Button from "../UIElements/Button";
 import Card from "../UIElements/Card";
+import EmptyError from './EmptyError';
 
-export default function UserForm({ name, setName, age, setAge, addUser }) {
-  
+export default function UserForm({ addUser }) {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [isError, setisError] = useState(false);
+
+
   const addUserHandller = (event) => {
     event.preventDefault();
-    addUser();
+    if (age.trim() === '' || name.trim() === '') {
+      setisError(true);
+    } else if (isNaN(age) || +age < 1) {
+      setisError(true);
+    } else {
+      addUser({age, name});
+    }
   };
 
   return (
     <Card className="form">
+      <EmptyError setisError={setisError} isError={isError}/>
       <form>
         <div>
           <label htmlFor="user-name">Name</label>
