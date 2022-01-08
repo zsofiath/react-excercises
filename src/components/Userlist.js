@@ -8,7 +8,7 @@ export default function Userlist({ users }) {
         <li>
         <Card key={index} className="list-item">
           <div >
-            <div>{user.name}</div><div>{user.age}</div>
+            <div>{user.name}</div><div>{user.age}<span>Years old</span></div>
           </div>
         </Card>
         </li>
