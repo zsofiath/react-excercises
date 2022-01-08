@@ -35,7 +35,7 @@ export default function UserForm({ name, setName, age, setAge, addUser }) {
           />
         </div>
 
-        <Button text="Add user" btnW onClick={addUserHandller}></Button>
+        <Button btnW onClick={addUserHandller}>Add user</Button>
       </form>
     </Card>
   );

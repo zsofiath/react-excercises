@@ -9,9 +9,9 @@ export default function EmptyError({isError, setisError}) {
         <Card className="list-item">
         <>
           You must fill every field!
-          <Button text="Close" className="mt-5 btn-w" onClick={() => {
+          <Button  className="mt-5 btn-w" onClick={() => {
               setisError(false);
-            }} on/>
+            }} >Close</Button>
         </>
         </Card>
         </Dialog>
