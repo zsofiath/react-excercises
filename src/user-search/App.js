@@ -1,7 +1,7 @@
-import "./App.css";
 import { useState } from "react";
 import Userlist from "./components/Userlist";
 import UserForm from "./components/UserForm";
+import './styles.css';
 
 function App() {
   const [usersList, setUsersList] = useState([]);
