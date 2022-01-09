@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './user-search/App';
+import App from './food-order/App';
 
 ReactDOM.render(<App />,
   document.getElementById('root')
