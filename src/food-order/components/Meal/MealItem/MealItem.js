@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./MealItem.module.css";
 import Mealitemform from "./MealItemForm";
 
-const Mealitem = ({ name, description, price }) => {
+const Mealitem = ({ id, name, description, price }) => {
 const fprice = `$${price.toFixed(2)}`;
 return (
     <li className={classes.meal}>
@@ -12,7 +12,7 @@ return (
         <span className={classes.price}>{fprice}</span>
       </div>
       <div>
-          <Mealitemform></Mealitemform>
+          <Mealitemform id={id}></Mealitemform>
       </div>
     </li>
   );
