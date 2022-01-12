@@ -8,7 +8,9 @@ const Cart = (props) => {
     const cartCtx = useContext(CartContext);
 
     const cartItemRemoveHandler = (id)=> {}
-    const cartItemAddHandler = (item)=> {}
+    const cartItemAddHandler = (item)=> {
+        cartCtx.addItem(item);
+    }
 
 
     const cartItems = cartCtx.items.map(item => <CartItem key={item.id} 
