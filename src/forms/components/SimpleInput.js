@@ -13,7 +13,7 @@ const SimpleInput = (props) => {
   const emailInputIsInvalid = !enteredEmailIsValid && enteredEmailIsTouched;
 
   let formIsValid = false;
-  if(enteredNameIsValid) formIsValid = true;
+  if(enteredNameIsValid && enteredEmailIsValid) formIsValid = true;
 
   const nameInputChangeHandler = event => {
     setEnteredName(event.target.value);
@@ -47,7 +47,7 @@ const SimpleInput = (props) => {
     <form onSubmit={formSubmissionHandler}>
       <div className={nameInputClasses}>
         <label htmlFor='name'>Your Name</label>
-        <input onChange={nameInputChangeHandler} onBlur={nameInputBlurHandler} type='text' id='name'  value={enteredName}/>
+        <input onChange={nameInputChangeHandler} onBlur={nameInputBlurHandler} type='email' id='name'  value={enteredName}/>
         {nameInputIsInvalid && <p className='error-text'>Entered name is not valid</p>}
       </div>
       <div className={emailInputClasses}>
