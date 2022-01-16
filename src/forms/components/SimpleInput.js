@@ -17,7 +17,7 @@ const SimpleInput = (props) => {
     reset: resetEmailInput,
     valueChangeHandler: emailInputChangeHandler,
     valueBlurHandler: emailInputBlurHandler
-  } = useInput(value => enteredEmail.trim() !== '' && enteredEmail.indexOf('@') > -1 && enteredEmail.indexOf('.') > enteredEmail.indexOf('@'));
+  } = useInput(value => value.trim() !== '' && value.indexOf('@') > -1 && value.indexOf('.') > value.indexOf('@'));
 
   let formIsValid = false;
   if(enteredNameIsValid && enteredEmailIsValid) formIsValid = true;
