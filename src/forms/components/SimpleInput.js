@@ -1,44 +1,33 @@
-import {useState} from 'react';
+import useInput from '../hooks/use-input';
 
 const SimpleInput = (props) => {
-  const [enteredName, setEnteredName] = useState(''); //better for instant validation, resetting
-  const [enteredEmail, setEnteredEmail] = useState(''); //better for instant validation, resetting
-  const [enteredNameIsTouched, setEnteredNameIsTouched] = useState(false);
-  const [enteredEmailIsTouched, setEnteredEmailIsTouched] = useState(false);
+  const {
+    value: enteredName,
+    isValid: enteredNameIsValid,
+    hasError: nameInputIsInvalid,
+    reset: resetNameInput,
+    valueChangeHandler: nameInputChangeHandler,
+    valueBlurHandler: nameInputBlurHandler
+  } = useInput(value => value.trim() !== '');
 
-  const enteredNameIsValid = enteredName.trim() !== '';
-  const nameInputIsInvalid = !enteredNameIsValid && enteredNameIsTouched;
-
-  const enteredEmailIsValid = enteredEmail.trim() !== '' && enteredEmail.indexOf('@') > -1 && enteredEmail.indexOf('.') > enteredEmail.indexOf('@');
-  const emailInputIsInvalid = !enteredEmailIsValid && enteredEmailIsTouched;
+  const {
+    value: enteredEmail,
+    isValid: enteredEmailIsValid,
+    hasError: emailInputIsInvalid,
+    reset: resetEmailInput,
+    valueChangeHandler: emailInputChangeHandler,
+    valueBlurHandler: emailInputBlurHandler
+  } = useInput(value => enteredEmail.trim() !== '' && enteredEmail.indexOf('@') > -1 && enteredEmail.indexOf('.') > enteredEmail.indexOf('@'));
 
   let formIsValid = false;
   if(enteredNameIsValid && enteredEmailIsValid) formIsValid = true;
 
-  const nameInputChangeHandler = event => {
-    setEnteredName(event.target.value);
-  }
-
-  const nameInputBlurHandler = () => {
-    setEnteredNameIsTouched(true);
-  }
-
-  const emailInputChangeHandler = (event) => {
-    setEnteredEmail(event.target.value);
-  }
-  const emailInputBlurHandler = () => {
-    setEnteredEmailIsTouched(true);
-  }
-
   const formSubmissionHandler = event => {
     event.preventDefault();
-    setEnteredNameIsTouched(true);
-    setEnteredEmailIsTouched(true);
     if(!enteredNameIsValid || !enteredEmailIsValid) return;
     console.log('Boom');
-    setEnteredName('');
-    setEnteredNameIsTouched(false);
-    setEnteredEmailIsTouched(false);
+    resetNameInput();
+    resetEmailInput();
   }
 
   const nameInputClasses = `form-control${!nameInputIsInvalid ? '' : ' invalid'}`;
