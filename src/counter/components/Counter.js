@@ -6,14 +6,16 @@ const Counter = () => {
   const counter = useSelector((state) => state.counter.counter);
   const dispatch = useDispatch();
   const toggleCounterHandler = () => {};
+  const isAuthenticated = useSelector((state) => state.login.isAuthenticated);
 
-  const incrementHandler = state => {
+  const incrementHandler = (state) => {
     dispatch(counterActions.increment());
   };
-  const decrementHandler = state => {
+  const decrementHandler = (state) => {
     dispatch(counterActions.decrement());
   };
 
+  if (!isAuthenticated) return <></>;
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
