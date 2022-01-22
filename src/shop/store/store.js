@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { ADD_TO_CART, TOGGLE_CART } from "./ActionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART, TOGGLE_CART } from "./ActionTypes";
 const initialState = {
   isChartVisible: true,
   itemList: [
@@ -34,6 +34,26 @@ const cartReducer = (state = initialState, action) => {
 
     } else {
       existingItem[0].quantity++;
+      existingItem[0].total = existingItem[0].quantity * existingItem[0].price;
+    }
+  }
+  else if(action.type === REMOVE_FROM_CART) {
+    state = {
+      itemList: state.itemList.filter((item) => true),
+      cartItemList: state.cartItemList.filter((item) => true),
+      isChartVisible: state.isChartVisible,
+    };
+
+    const existingItemIndex = state.cartItemList.findIndex((item) => {
+      return item.id === action.item.id;
+    });
+    const existingItem = state.cartItemList.filter((item) => {
+      return item.id === action.item.id;
+    });
+    if (existingItem[0].quantity === 1) {
+      delete state.cartItemList[existingItemIndex];
+    } else {
+      existingItem[0].quantity--;
       existingItem[0].total = existingItem[0].quantity * existingItem[0].price;
     }
   }
