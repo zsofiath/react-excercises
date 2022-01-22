@@ -7,12 +7,16 @@ const initialState = {
         {id: 2, name: 'name 2', price: 6, description: 'Lorem ipsum'},
         {id: 3, name: 'name 3', price: 3, description: 'Lorem ipsum'},
         {id: 4, name: 'name 4', price: 77, description: 'Lorem ipsum'},
+    ],
+    cartItemList: [
+        {id: 1, name: 'name 1', price: 2, amount: 1, total: 3}
     ]
 };
 
 const cartReducer = (state = initialState, action) => {
     if(action.type === TOGGLE_CART) state = {
         itemList: state.itemList.filter(item => true),
+        cartItemList: state.cartItemList.filter(item => true),
         isChartVisible: !state.isChartVisible
     }
     return state;
