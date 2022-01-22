@@ -1,21 +1,16 @@
+import produce from "immer";
 import { createStore } from "redux";
 
 const defaultSate = {
     counter: 0
 };
 
-const reducer = (state = defaultSate, action) => {
+const reducer = produce((draft, action) => {
   if (action.type === "increment") {
-    return {
-        counter: state.counter+1
-    }
+    draft.counter++;
   } else if (action.type === "decrement") {
-    return {
-        counter: state.counter-1
-    }
+    draft.counter--;
   }
-  return state;
-};
-
+}, defaultSate);
 const store = createStore(reducer);
 export default store;
