@@ -44,14 +44,11 @@ const cartReducer = (state = initialState, action) => {
       isChartVisible: state.isChartVisible,
     };
 
-    const existingItemIndex = state.cartItemList.findIndex((item) => {
-      return item.id === action.item.id;
-    });
     const existingItem = state.cartItemList.filter((item) => {
       return item.id === action.item.id;
     });
     if (existingItem[0].quantity === 1) {
-      delete state.cartItemList[existingItemIndex];
+      state.cartItemList = [...state.cartItemList.filter(item => item.id !== action.item.id)];
     } else {
       existingItem[0].quantity--;
       existingItem[0].total = existingItem[0].quantity * existingItem[0].price;
