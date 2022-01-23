@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Addnewquote = () => {
+const NewQuote = () => {
     return (
         <div>
-            Addnewquote
+            NewQuote
         </div>
     );
 }
 
-export default Addnewquote;
+export default NewQuote;
