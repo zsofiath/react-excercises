@@ -1,16 +1,20 @@
 import classes from "./CartItem.module.css";
 import { useDispatch } from "react-redux";
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../../store/ActionTypes";
+import { CartActions } from "../../store/store";
 
 const CartItem = (props) => {
-  const { title, quantity, total, price } = props.item;
+  const { title, quantity, total, price, id } = props.item;
   const dispatch = useDispatch();
 
   const increaseItemAmountHandler = () => {
-    dispatch({ type: ADD_TO_CART, item: props.item });
+    dispatch(CartActions.addItem({
+      id,
+      title,
+      price,
+    }));
   };
   const decreaseItemAmountHandler = () => {
-    dispatch({ type: REMOVE_FROM_CART, item: props.item });
+    dispatch(CartActions.removeItem(props.item.id));
   };
 
   return (

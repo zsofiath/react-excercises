@@ -4,8 +4,8 @@ import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
 
 const Cart = (props) => {
-  const isChartVisible = useSelector((state) => state.isChartVisible);
-  const cartItemList = useSelector((state) => state.cartItemList);
+  const isChartVisible = useSelector((state) => state.UI.isChartVisible);
+  const cartItemList = useSelector((state) => state.Cart.items);
   if (!isChartVisible) return <></>;
   return (
     <Card className={classes.cart}>
