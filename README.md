@@ -18,3 +18,10 @@ This app simulates a food ordering system, where items can be added and removed 
 * reducer - *complex state management (dispatcher, actions, reducer)
 * ref, forwardRef - *dom element reference, read only, it can be forwarded to the parent*
 * useEffect - *this will not run every time the component is rendered*
+
+## 3. :package: Forms:
+Form validation excercise.
+### Learned concepts
+* ref vs useState
+* valid and touched states
+* custom hook
