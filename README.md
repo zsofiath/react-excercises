@@ -25,3 +25,9 @@ Form validation excercise.
 * ref vs useState
 * valid and touched states
 * custom hook
+
+## 4. :heavy_plus_sign: counter app:
+This app simulates a food ordering system, where items can be added and removed from a cart.
+### Learned concepts
+* redux - state management
+* redux toolit - slices, actions, faked mutability
