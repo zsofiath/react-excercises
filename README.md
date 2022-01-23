@@ -19,7 +19,14 @@ This app simulates a food ordering system, where items can be added and removed 
 * ref, forwardRef - *dom element reference, read only, it can be forwarded to the parent*
 * useEffect - *this will not run every time the component is rendered*
 
-## 3. :heavy_plus_sign: counter app:
+## 3. :package: Forms:
+Form validation excercise.
+### Learned concepts
+* ref vs useState
+* valid and touched states
+* custom hook
+
+## 4. :heavy_plus_sign: counter app:
 This app simulates a food ordering system, where items can be added and removed from a cart.
 ### Learned concepts
 * redux - state management
