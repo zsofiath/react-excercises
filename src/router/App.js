@@ -6,9 +6,9 @@ function App() {
   return (
     <BrowserRouter>
     <Switch>
-      <Route path="/" exact><Allquotes></Allquotes></Route>
+      <Route path="/quotes" exact><Allquotes></Allquotes></Route>
       <Route path="/new-quote"><Addnewquote></Addnewquote></Route>
-      <Route path="/quote-detail/:id"><Quotedetail></Quotedetail></Route>
+      <Route path="/quotes/:quoteId"><Quotedetail></Quotedetail></Route>
     </Switch>
     </BrowserRouter>
   );
