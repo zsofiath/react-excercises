@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './shop/App';
-import './shop/index.css';
+import App from './router/App';
+import './router/index.css';
 
 
 ReactDOM.render(<App />,
