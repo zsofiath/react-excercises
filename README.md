@@ -10,7 +10,7 @@ This is a simple form that adds new items to a user list. Only the name and the 
 * components
 * styling
 
-## 2. :package: Food-order app:
+## 2. :package: Food-order app: [PR](https://github.com/zsofiath/react-excercises/pull/2)
 This app simulates a food ordering system, where items can be added and removed from a cart.
 ### Learned concepts
 * portal - *render certain elmeents in certain point of the DOM*
@@ -19,20 +19,20 @@ This app simulates a food ordering system, where items can be added and removed 
 * ref, forwardRef - *dom element reference, read only, it can be forwarded to the parent*
 * useEffect - *this will not run every time the component is rendered*
 
-## 3. 📝 Forms:
+## 3. 📝 Forms: [PR](https://github.com/zsofiath/react-excercises/pull/3)
 Form validation excercise.
 ### Learned concepts
 * ref vs useState
 * valid and touched states
 * custom hook
 
-## 4. :heavy_plus_sign: counter app:
+## 4. :heavy_plus_sign: counter app: [PR](https://github.com/zsofiath/react-excercises/pull/3)
 This app simulates a food ordering system, where items can be added and removed from a cart.
 ### Learned concepts
 * redux - state management
 * redux toolit - slices, actions, faked mutability
 
-## 5. :bento: Shop
+## 5. :bento: Shop [PR](https://github.com/zsofiath/react-excercises/pull/5)
 This is a shop where items cab be added, and removed from chart
 ### Learned concepts
 * redux
