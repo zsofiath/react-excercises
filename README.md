@@ -31,3 +31,10 @@ This app simulates a food ordering system, where items can be added and removed 
 ### Learned concepts
 * redux - state management
 * redux toolit - slices, actions, faked mutability
+
+## 5. :bento: Shop
+This is a shop where items cab be added, and removed from chart
+### Learned concepts
+* redux
+* redux toolkit
+* trying action creator
