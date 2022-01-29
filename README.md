@@ -18,3 +18,23 @@ This app simulates a food ordering system, where items can be added and removed 
 * reducer - *complex state management (dispatcher, actions, reducer)
 * ref, forwardRef - *dom element reference, read only, it can be forwarded to the parent*
 * useEffect - *this will not run every time the component is rendered*
+
+## 3. 📝 Forms:
+Form validation excercise.
+### Learned concepts
+* ref vs useState
+* valid and touched states
+* custom hook
+
+## 4. :heavy_plus_sign: counter app:
+This app simulates a food ordering system, where items can be added and removed from a cart.
+### Learned concepts
+* redux - state management
+* redux toolit - slices, actions, faked mutability
+
+## 5. :bento: Shop
+This is a shop where items cab be added, and removed from chart
+### Learned concepts
+* redux
+* redux toolkit
+* trying action creator
