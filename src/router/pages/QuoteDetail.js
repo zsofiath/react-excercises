@@ -34,7 +34,7 @@ const Quotedetail = () => {
     );
 
   if (!quote.text) return <>No quote found</>;
-
+console.log(1111);
   return (
     <>
       <HighlightedQuote
@@ -48,7 +48,7 @@ const Quotedetail = () => {
         </Link>
         </div>
       </Route>
-      <Route path={`${match.path}/comments`}>
+      <Route path={`${match.path}/comments`}>2
         <Comments></Comments>
       </Route>
     </>

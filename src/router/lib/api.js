@@ -56,7 +56,8 @@ export async function addQuote(quoteData) {
 }
 
 export async function addComment(requestData) {
-  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${requestData.quoteId}.json`, {
+  console.log(requestData);
+  const response = await fetch(`${FIREBASE_DOMAIN}comments/${requestData.quoteId}.json`, {
     method: 'POST',
     body: JSON.stringify(requestData.commentData),
     headers: {
@@ -82,11 +83,10 @@ export async function getAllComments(quoteId) {
   }
 
   const transformedComments = [];
-
   for (const key in data) {
     const commentObj = {
       id: key,
-      ...data[key],
+      text: data[key],
     };
 
     transformedComments.push(commentObj);
