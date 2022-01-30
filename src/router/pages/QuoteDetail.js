@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, useParams, Redirect } from "react-router-dom";
+import { Route, Switch, useParams, Redirect, Link } from "react-router-dom";
 import Comments from "../components/comments/Comments";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 const DUMMY_QUOTES = [
@@ -21,6 +21,11 @@ const Quotedetail = () => {
         text={quote.text}
         author={quote.author}
       ></HighlightedQuote>
+      <Route exact path={`/quotes/${param.quoteId}`}>
+        <Link className="btn--flat" to={`/quotes/${param.quoteId}/comments`}>
+          Comment
+        </Link>
+      </Route>
       <div>Quotedetail {param.quoteId}</div>
       <Route path={`/quotes/${param.quoteId}/comments`}>
         <Comments></Comments>
